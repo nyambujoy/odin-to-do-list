@@ -1,6 +1,7 @@
 import './css/index.css'
 // import addImg from '.IMGS/add.svg'
-import { handleAdd } from './add';
+import './css/add.css'
+import { Notes } from './add';
 
 function handleMainPage() {
     const contentContainer = document.querySelector(".content")
@@ -27,7 +28,12 @@ function handleMainPage() {
 handleMainPage()
 
 let plusButton = document.querySelector("#addSvg");
+
+
 plusButton.addEventListener("click", () => {
-    console.log("hello world")
-    handleAdd()
+    Notes.handleModal()
+    Notes.appendingNote()
 })
+
+
+

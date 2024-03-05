@@ -1,0 +1,54 @@
+.modal {
+    width: 600px;
+    height: 500px;
+    border: none;
+    outline: none;
+    margin: auto;
+    padding: 50px;
+    font-size: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #EC8DCE;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+}
+
+
+
+#title {
+    border: none;
+    outline: none;
+    border-bottom: 3px solid purple;
+    color: #211422;
+}
+
+#para {
+
+    border: none;
+    outline: none;
+    color: purple;
+
+
+}
+
+::backdrop {
+    background-color: linear-gradient(20deg, #BCACD4, #fff);
+    opacity: .2;
+}
+
+.lastLine {
+    margin-top: auto;
+}
+
+.lastLine>button {
+    width: 100px;
+    height: 30px;
+    gap: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #686666;
+    color: #fff;
+}
