@@ -16,10 +16,11 @@ class Notes {
         modal.classList.add("modal");
 
         // Append the dialog to the body
-        document.body.appendChild(modal);
+
 
         // Show the modal
         modal.showModal();
+
         const title = document.createElement("h2")
         title.id = 'title'
         title.setAttribute('contenteditable', 'true');
@@ -38,17 +39,17 @@ class Notes {
         const closeBtn = document.createElement("button")
         closeBtn.innerHTML = 'X'
 
-        const timer = document.createElement("div")
-        timer.classList.add("timer")
+        // const timer = document.createElement("div")
+        // timer.classList.add("timer")
 
 
-        const start = document.createElement("span")
-        start.innerHTML = 'start'
-        const stop = document.createElement("span")
-        stop.innerHTML = 'stop'
-        const howLong = document.createElement("span")
-        howLong.innerHTML = 'how long'
-        timer.append(start, stop, howLong)
+        // const start = document.createElement("span")
+        // start.innerHTML = 'start'
+        // const stop = document.createElement("span")
+        // stop.innerHTML = 'stop'
+        // const howLong = document.createElement("span")
+        // howLong.innerHTML = 'how long'
+        // timer.append(start, stop, howLong)
 
 
         const lastLine = document.createElement("div")
@@ -59,20 +60,25 @@ class Notes {
 
         modal.append(title, displayP, lastLine)
 
-        // document.body.appendChild(modal);
+
         const sideBar = document.querySelector(".sidebar")
         saveBtn.addEventListener("click", () => {
-            const noteTitle = title.textContent;
-            const noteContent = displayP.textContent;
+            const noteTitle = title.textContent.trim();
+            const noteContent = displayP.textContent.trim();
 
-            // Create a new instance of the Notes class and add the note to the listNotes array
-            const newNote = new Notes(`${noteTitle}: ${noteContent}`);
-            newNote.creatingNotes(`${noteTitle}: ${noteContent}`);
+            if (noteTitle !== '' && noteContent !== '') {
+                // Create a new instance of the Notes class and add the note to the listNotes array
+                const newNote = new Notes(`${noteTitle} :${noteContent}`);
+                listNotes.push(newNote);
+                console.log(listNotes)
+                Notes.appendingNote();
+                modal.close();
 
-            // Close the modal
-            modal.close();
+            } else {
+                noteTitle.textContent = 'empty'
+            }
 
-            Notes.appendingNote();
+
 
 
         })
@@ -80,12 +86,18 @@ class Notes {
         deleteBtn.addEventListener("click", () => {
             title.textContent = ''
             displayP.textContent = ''
+            // modal.close()
 
         })
 
         closeBtn.addEventListener("click", () => {
-            modal.close()
+            // modal.close()
+            console.log("hello")
         })
+
+        document.body.appendChild(modal);
+        // modal.showModal()
+
 
     }
 

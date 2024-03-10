@@ -72,3 +72,10 @@ body {
     color: var(--black);
 
 }
+
+.sidebar {
+    background-color: #211422;
+    color: white;
+    padding: 50px;
+    font-size: 2rem;
+}

@@ -31,8 +31,9 @@ let plusButton = document.querySelector("#addSvg");
 
 
 plusButton.addEventListener("click", () => {
-    Notes.handleModal()
-    Notes.appendingNote()
+    // Notes.handleModal()
+    // Notes.appendingNote()
+    Notes.createNote();
 })
 
 

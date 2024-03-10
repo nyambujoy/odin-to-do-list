@@ -1,3 +1,8 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
 .modal {
     width: 600px;
     height: 500px;
@@ -51,4 +56,10 @@
     border: none;
     background-color: #686666;
     color: #fff;
+}
+
+.currentNote {
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
 }
